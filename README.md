@@ -1,6 +1,4 @@
 # desafioGo
-
-
 API REST em Go usando [Gin](https://github.com/gin-gonic/gin), [GORM](https://gorm.io/) e banco de dados SQLite (com driver puro em Go).
 
 ## Funcionalidades
@@ -15,16 +13,19 @@ API REST em Go usando [Gin](https://github.com/gin-gonic/gin), [GORM](https://go
 
 
 ## Como rodar o projeto
-- ```bash
-go run .
-### Pré-requisitos
+ - go run .
+   
+## Pré-requisitos
 - Go instalado → https://go.dev/dl/
 - Não precisa de `gcc` ou `CGO` (usa driver puro em Go)
+
 
 ### Instalar dependências
 ```bash
 go mod tidy
 
+
 ### A API ficará disponível em:
-- http://localhost:8080
+
+http://localhost:8080
 
