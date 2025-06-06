@@ -10,10 +10,9 @@ import (
 func ReportSugar(c *gin.Context) {
 	var fruits []model.Fruit
 
-	// Busca todas as frutas do banco
+
 	database.DB.Find(&fruits)
 
-	// Classifica frutas
 	highSugar := []gin.H{}
 	lowSugar := []gin.H{}
 
@@ -26,7 +25,6 @@ func ReportSugar(c *gin.Context) {
 		}
 	}
 
-	// Resposta JSON
 	c.JSON(http.StatusOK, gin.H{
 		"high_sugar":       highSugar,
 		"low_sugar":        lowSugar,

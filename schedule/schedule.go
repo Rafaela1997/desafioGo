@@ -9,7 +9,7 @@ import (
 func Start() {
 	c := cron.New()
 
-	// Roda todo dia à meia-noite
+
 	_, err := c.AddFunc("0 0 * * *", func() {
 		log.Println("Executando crawler programado...")
 		service.CrawlFruits()
@@ -19,7 +19,6 @@ func Start() {
 		log.Println("Erro ao agendar crawler:", err)
 	}
 
-	// Executa o crawler uma vez na inicialização também (opcional, mas útil)
 	go service.CrawlFruits()
 
 	c.Start()

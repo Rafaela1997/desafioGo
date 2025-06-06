@@ -7,7 +7,7 @@ import (
 	"log"
 )
 
-// Estrutura usada para mapear os dados da API externa
+
 type apiFruit struct {
 	ID         int    `json:"id"`
 	Name       string `json:"name"`
@@ -35,10 +35,9 @@ func CrawlFruits() {
 		fruit := model.Fruit{
 			ID:    apiF.ID,
 			Name:  apiF.Name,
-			Sugar: int(apiF.Nutritions.Sugar), // Armazena como inteiro
+			Sugar: int(apiF.Nutritions.Sugar), 
 		}
 
-		// Salva no banco (atualiza se já existir, senão cria)
 		database.DB.Save(&fruit)
 	}
 
